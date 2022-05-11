@@ -2,12 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { LayoutRoutingModule } from './layout-routing.module';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LayoutComponent } from './layout.component';
 import { ProgressComponent } from './global/progress/progress.component';
 import { ProductCardComponent } from './global/product-card/product-card.component';
-
 
 @NgModule({
   declarations: [
@@ -15,11 +14,9 @@ import { ProductCardComponent } from './global/product-card/product-card.compone
     HeaderComponent,
     LayoutComponent,
     ProgressComponent,
-    ProductCardComponent
+    ProductCardComponent,
   ],
-  imports: [
-    CommonModule,
-    LayoutRoutingModule
-  ]
+  imports: [CommonModule, LayoutRoutingModule],
+  exports: [],
 })
-export class LayoutModule { }
+export class LayoutModule {}
