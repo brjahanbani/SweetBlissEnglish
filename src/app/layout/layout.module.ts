@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { LayoutComponent } from './layout.component';
 import { ProgressComponent } from './global/progress/progress.component';
 import { ProductCardComponent } from './global/product-card/product-card.component';
+import { AuthenticationModule } from './pages/authentication/authentication.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,6 @@ import { ProductCardComponent } from './global/product-card/product-card.compone
     ProgressComponent,
     ProductCardComponent,
   ],
-  imports: [CommonModule, LayoutRoutingModule],
-  exports: [],
+  imports: [CommonModule, LayoutRoutingModule, AuthenticationModule],
 })
 export class LayoutModule {}
