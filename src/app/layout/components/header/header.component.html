@@ -3,7 +3,7 @@
   <!-- Container wrapper -->
   <div class="container">
     <!-- Navbar brand -->
-    <a class="navbar-brand me-2" href="#">
+    <a class="navbar-brand me-2" routerLink="/" routerLinkActive="active">
       <img src="https://sweetbliss.ir/assets/logo.svg" height="60" alt="sweetbliss Logo" loading="lazy"
         style="margin-top: -1px;" />
     </a>
@@ -23,34 +23,34 @@
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Categories</a>
+          <a class="nav-link" routerLink="/categories" routerLinkActive="active">Categories</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About us</a>
+          <a class="nav-link" routerLink="/aboutus" routerLinkActive="active">About us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact us</a>
+          <a class="nav-link" routerLink="/contactus" routerLinkActive="active">Contact us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">FAQ</a>
+          <a class="nav-link" routerLink="/faq" routerLinkActive="active">FAQ</a>
         </li>
       </ul>
       <!-- Right links -->
 
       <div class="d-flex align-items-center">
-        <button type="button" class="btn btn-link px-3 me-2">
+        <button type="button" class="btn btn-link px-3 me-2" routerLink="/signin" routerLinkActive="active">
           Login
         </button>
-        <button type="button" class="btn btn-primary me-3">
+        <button type="button" class="btn btn-primary me-3" routerLink="/signup" routerLinkActive="active">
           Sign up to Buy
         </button>
 
         <!-- Badge -->
 
-        <a class="nav-link" href="#">
+        <a class="nav-link" routerLink="/cart" routerLinkActive="active">
           <span class="badge badge-pill bg-danger">1</span>
           <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart4"
               viewBox="0 0 16 16">
