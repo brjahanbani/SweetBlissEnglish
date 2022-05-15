@@ -19,6 +19,18 @@ const routes: Routes = [
             (m) => m.AuthenticationModule
           ),
       },
+      {
+        path: '',
+        loadChildren: () =>
+          import('./pages/products/categories/categories.module').then(
+            (m) => m.CategoriesModule
+          ),
+      },
+      {
+        path: '',
+        loadChildren: () =>
+          import('./pages/order/order.module').then((m) => m.OrderModule),
+      },
     ],
   },
 ];
