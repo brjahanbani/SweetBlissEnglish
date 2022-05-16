@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "INDIVIDUAL DESSERTS",
+    "code": "INDE",
+    "imageSrc": "https://images.sweetbliss.ir/categories/CC-1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "BOULANGERIE DESSERTS",
+    "code": "BODE",
+    "imageSrc": "https://images.sweetbliss.ir/categories/CC-2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "BREAD",
+    "code": "BRED",
+    "imageSrc": "https://images.sweetbliss.ir/categories/CC-4.jpg"
+  },
+  {
+    "id": 4,
+    "name": "TARTS & PIES",
+    "code": "TAPI",
+    "imageSrc": "https://images.sweetbliss.ir/categories/CC-5.jpg"
+  }
+]
