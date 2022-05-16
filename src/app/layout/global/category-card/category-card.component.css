@@ -1,0 +1,124 @@
+/*****************
+    - Header -
+*****************/
+header {
+	position:relative;
+	left:0;
+	top:0;
+	width:100%;
+	min-height:120px;
+	/* padding:50px 0; */
+	color:#fff;
+	    background: #383838 url(https://www.instagram.com/p/CdbMSMMNVBX/) no-repeat center center;
+	margin-bottom:30px
+}
+
+/* Logo */
+header .logo {
+	clear:both;
+    display:block;
+	text-align:center;
+    padding-bottom:10px;
+}
+
+/* Title */
+header h1 {
+    font-weight:300;
+    font-size:24px;
+    color:#eee;	
+	letter-spacing:2px;
+	text-align:center;
+	text-transform:uppercase;
+	margin:0 !important;
+	padding-bottom:25px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900|Open Sans:400,600,800');
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+input,
+p,
+a {
+    font-family: "system-ui";
+    margin: 0px;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+}
+
+body {
+    background-color: #F1F2F3;
+}
+
+.container-fluid,
+.container {
+    width: 100%;
+}
+
+.card-container {
+    padding: 100px 0px;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+}
+
+.category-card-2 {
+    max-width: 400px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    margin: 10px 10px 10px 0 ;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.category-card-2 img {
+    transition: all linear 0.25s;
+    width: 400px;
+    height: 100%;
+}
+
+.category-card-2 .category-name {
+    position: absolute;
+    left: 17px;
+    bottom: 130px;
+    font-size: 30px;
+    color: #FFF;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    transition: all linear 0.25s;
+}
+
+#categoryButton {
+    position: absolute;
+    bottom: 85px;
+    left: 17px;
+    width: 180px;
+    height: 40px;
+    transition: all linear 0.25s;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+
+}
+
+.category-card-2:hover img {
+    filter: grayscale(100%);
+}
+
+.category-card-2:hover .category-name {
+    bottom: 125px;
+}
+
+.row > * {
+    padding-left: calc(var(--bs-gutter-x) * 0);
+}
