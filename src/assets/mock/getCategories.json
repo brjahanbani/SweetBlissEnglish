@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "INDIVIDUAL DESSERTS",
+    "code": "INDE",
+    "imageSrc": "./assets/categoryImg/cat4.jpg"
+  },
+  {
+    "id": 2,
+    "name": "BOULANGERIE DESSERTS",
+    "code": "BODE",
+    "imageSrc": "./assets/categoryImg/cat1.jpg"
+  },
+  {
+    "id": 3,
+    "name": "DESSERTS",
+    "code": "DSRT",
+    "imageSrc": "./assets/categoryImg/cat3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "TARTS & PIES",
+    "code": "TAPI",
+    "imageSrc": "./assets/categoryImg/cat2.jpg"
+  }
+]
