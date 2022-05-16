@@ -7,6 +7,10 @@
     <!-- Our Categories -->
     <h4 class="mt-1">OUR CATEGORIES</h4>
     <br>
-    <app-category-card></app-category-card>
+    <ng-container *ngFor="let category of (categories$ | async)">
+      <div class="col">
+        <app-category-card [category]="category"></app-category-card>
+      </div>
+    </ng-container>
   </div>
 </div>
