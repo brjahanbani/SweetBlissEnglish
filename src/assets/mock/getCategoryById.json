@@ -1,0 +1,64 @@
+{
+  "id": 1,
+  "name": "INDIVIDUAL DESSERTS",
+  "code": "INDE",
+  "imageSrc": "./assets/categoryImg/cat4.jpg",
+  "products": [
+    {
+      "id": 1,
+      "categoryId": 1,
+      "name": "Name1",
+      "price": 45000,
+      "code": "INDE-001",
+      "imageSrc": "./assets/productImg/prdct1.jpg"
+    },
+    {
+      "id": 2,
+      "categoryId": 1,
+      "name": "Name2",
+      "price": 40000,
+      "code": "INDE-002",
+      "imageSrc": "./assets/productImg/prdct2.jpg"
+    },
+    {
+      "id": 3,
+      "categoryId": 1,
+      "name": "Name3",
+      "price": 36000,
+      "code": "INDE-003",
+      "imageSrc": "./assets/productImg/prdct3.jpg"
+    },
+    {
+      "id": 4,
+      "categoryId": 1,
+      "name": "Name4",
+      "price": 53000,
+      "code": "INDE-004",
+      "imageSrc": "./assets/productImg/prdct4.jpg"
+    },
+    {
+      "id": 5,
+      "categoryId": 1,
+      "name": "Name5",
+      "price": 38000,
+      "code": "INDE-005",
+      "imageSrc": "./assets/productImg/prdct5.jpg"
+    },
+    {
+      "id": 6,
+      "categoryId": 1,
+      "name": "Name6",
+      "price": 62000,
+      "code": "INDE-006",
+      "imageSrc": "./assets/productImg/prdct6.jpg"
+    },
+    {
+      "id": 7,
+      "categoryId": 1,
+      "name": "Name7",
+      "price": 41000,
+      "code": "INDE-007",
+      "imageSrc": "./assets/productImg/prdct7.jpg"
+    }
+  ]
+}
