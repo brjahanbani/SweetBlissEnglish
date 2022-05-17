@@ -6,7 +6,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LayoutComponent } from './layout.component';
 import { ProgressComponent } from './global/progress/progress.component';
-import { ProductCardComponent } from './global/product-card/product-card.component';
 import { AuthenticationModule } from './pages/authentication/authentication.module';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { AuthenticationModule } from './pages/authentication/authentication.modu
     HeaderComponent,
     LayoutComponent,
     ProgressComponent,
-    ProductCardComponent,
   ],
   imports: [CommonModule, LayoutRoutingModule, AuthenticationModule],
 })
