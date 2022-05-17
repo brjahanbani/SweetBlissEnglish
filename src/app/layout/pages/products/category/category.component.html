@@ -1,1 +1,19 @@
-<p>category works!</p>
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- breadcrumb -->
+    <app-breadcrumb></app-breadcrumb>
+
+    <!-- Products of Category -->
+    <h4 class="mt-1">Category Name: </h4>
+    <br>
+    <ng-container>
+      <div class="col">
+        <app-product-card></app-product-card>
+      </div>
+    </ng-container>
+
+    <!-- pagination -->
+    <app-pagination></app-pagination>
+  </div>
+</div>
