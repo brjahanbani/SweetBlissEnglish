@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { exhaustMap, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { CategoryService } from 'src/app/services/category.service';
-import { CategoryInterface } from 'src/class/interfaces/category.interface';
+import { Category } from 'src/class/category.class';
 
 @Component({
   selector: 'app-categories',
@@ -11,7 +10,7 @@ import { CategoryInterface } from 'src/class/interfaces/category.interface';
 })
 export class CategoriesComponent implements OnInit {
   // categories: any;
-  categories$!: Observable<CategoryInterface[]>;
+  categories$!: Observable<Category[]>;
   constructor(private categoryService: CategoryService) {}
 
   ngOnInit(): void {

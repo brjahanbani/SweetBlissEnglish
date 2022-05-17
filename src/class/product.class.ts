@@ -6,6 +6,7 @@ export class Product implements ProductInterface {
   public price!: number;
   public code!: string;
   public description!: string;
+  public imageSrc!: string;
 
   constructor(data: Product) {
     this.id = data.id;
@@ -14,5 +15,6 @@ export class Product implements ProductInterface {
     this.price = data.price;
     this.code = data.code;
     this.description = data.description;
+    this.imageSrc = data.imageSrc;
   }
 }

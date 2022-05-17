@@ -1,7 +1,7 @@
-import { CategoryInteface } from './interfaces/category.interface';
+import { CategoryInterface } from './interfaces/category.interface';
 import { Product } from './product.class';
 
-export class Category implements CategoryInteface {
+export class Category implements CategoryInterface {
   public id!: number;
   public name!: string;
   public code!: string;
@@ -13,6 +13,6 @@ export class Category implements CategoryInteface {
     this.name = data.name;
     this.code = data.code;
     this.imageSrc = data.imageSrc;
-    this.products = data.products;
+    this.products = data?.products;
   }
 }

@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
-import { CategoryInterface } from 'src/class/interfaces/category.interface';
+import { Category } from 'src/class/category.class';
 
 @Component({
   selector: 'app-category-card',
@@ -8,7 +7,7 @@ import { CategoryInterface } from 'src/class/interfaces/category.interface';
   styleUrls: ['./category-card.component.css'],
 })
 export class CategoryCardComponent implements OnInit {
-  @Input() category!: CategoryInterface;
+  @Input() category!: Category;
 
   constructor() {}
 
