@@ -2,7 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoryComponent } from './category.component';
 
-const routes: Routes = [{ path: 'category', component: CategoryComponent }];
+const routes: Routes = [
+  {
+    path: 'category/:id',
+    component: CategoryComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

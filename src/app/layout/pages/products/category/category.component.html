@@ -7,9 +7,9 @@
     <!-- Products of Category -->
     <h4 class="mt-1">Category Name: </h4>
     <br>
-    <ng-container>
+    <ng-container *ngFor="let product of (category$ | async)?.products">
       <div class="col">
-        <app-product-card></app-product-card>
+        <app-product-card [product]="product"></app-product-card>
       </div>
     </ng-container>
 
