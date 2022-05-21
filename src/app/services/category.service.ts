@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map, Observable, shareReplay } from 'rxjs';
 import { Category } from 'src/class/category.class';
 import { Product } from 'src/class/product.class';
 import { CategoryInterface } from 'src/class/interfaces/category.interface';
@@ -24,7 +24,8 @@ export class CategoryService {
             (categoryInterface) =>
               new Category({ ...categoryInterface, products: undefined })
           )
-        )
+        ),
+        shareReplay()
       );
   }
 
@@ -41,7 +42,8 @@ export class CategoryService {
             (productInterface) => new Product(productInterface)
           );
           return new Category({ ...categoryInterface, products });
-        })
+        }),
+        shareReplay()
       );
   }
 }

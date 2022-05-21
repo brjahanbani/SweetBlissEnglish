@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { exhaustMap, map, mergeMap, Observable, tap } from 'rxjs';
+import { exhaustMap, Observable, shareReplay } from 'rxjs';
 import { CategoryService } from 'src/app/services/category.service';
 import { Category } from 'src/class/category.class';
 
@@ -19,7 +19,8 @@ export class CategoryComponent implements OnInit {
   ngOnInit(): void {
     // this.category$ = this.categoryService.getCategory();
     this.category$ = this.route.params.pipe(
-      exhaustMap(({ id }) => this.categoryService.getCategory(id))
+      exhaustMap(({ id }) => this.categoryService.getCategory(id)),
+      shareReplay() //to make it hot and emit the second calling of server
     );
   }
 }
