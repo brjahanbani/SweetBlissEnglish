@@ -8,13 +8,13 @@ export class Product implements ProductInterface {
   public description!: string;
   public imageSrc!: string;
 
-  constructor(data: Product) {
-    this.id = data.id;
-    this.categoryId = data.categoryId;
-    this.name = data.name;
-    this.price = data.price;
-    this.code = data.code;
-    this.description = data.description;
-    this.imageSrc = data.imageSrc;
+  constructor(data: Partial<Product>) {
+    this.id = data.id!;
+    this.categoryId = data.categoryId!;
+    this.name = data.name!;
+    this.price = data.price!;
+    this.code = data.code!;
+    this.description = data.description!;
+    this.imageSrc = data.imageSrc!;
   }
 }
