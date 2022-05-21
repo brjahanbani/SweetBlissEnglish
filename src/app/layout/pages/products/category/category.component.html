@@ -4,7 +4,7 @@
   <app-breadcrumb></app-breadcrumb>
 
   <!-- Products of Category -->
-  <h4 class="mt-1">Category Name: </h4>
+  <h4 class="mt-1">Category Name: {{(category$ | async)?.name}}</h4>
   <br>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
     <ng-container *ngFor="let product of (category$ | async)?.products">
