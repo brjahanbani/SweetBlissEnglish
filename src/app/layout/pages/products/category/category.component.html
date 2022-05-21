@@ -9,7 +9,8 @@
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
     <ng-container *ngFor="let product of (category$ | async)?.products">
       <div class="col justify-content-start">
-        <app-product-card [product]="product"></app-product-card>
+        <app-product-card [product]="product" (addToCart)="addToCart($event.product, $event.quantity)">
+        </app-product-card>
       </div>
     </ng-container>
   </div>

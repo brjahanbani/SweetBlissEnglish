@@ -1,8 +1,16 @@
+import { Product } from './product.class';
 export class OrderProduct {
-  id!: number;
-  orderId!: number;
-  name!: string;
-  price!: number;
-  quantity!: number;
-  code!: string;
+  public orderId?: number;
+  public quantity!: number;
+  public product!: Product;
+
+  constructor(data: Partial<OrderProduct>) {
+    this.orderId = data?.orderId;
+    this.quantity = data.quantity || 1;
+    this.product = data.product!;
+  }
+
+  get price(): number {
+    return this.quantity * this.product.price;
+  }
 }
