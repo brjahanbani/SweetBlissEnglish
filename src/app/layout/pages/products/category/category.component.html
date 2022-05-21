@@ -1,19 +1,19 @@
 <div class="container-fluid">
-  <div class="row">
 
-    <!-- breadcrumb -->
-    <app-breadcrumb></app-breadcrumb>
+  <!-- breadcrumb -->
+  <app-breadcrumb></app-breadcrumb>
 
-    <!-- Products of Category -->
-    <h4 class="mt-1">Category Name: </h4>
-    <br>
+  <!-- Products of Category -->
+  <h4 class="mt-1">Category Name: </h4>
+  <br>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
     <ng-container *ngFor="let product of (category$ | async)?.products">
-      <div class="col">
+      <div class="col justify-content-start">
         <app-product-card [product]="product"></app-product-card>
       </div>
     </ng-container>
-
-    <!-- pagination -->
-    <app-pagination></app-pagination>
   </div>
+
+  <!-- pagination -->
+  <app-pagination></app-pagination>
 </div>
