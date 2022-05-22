@@ -1,1 +1,62 @@
-<p>progress works!</p>
+<!-- <div class="container">
+  <div class="row justify-content-start mt-3 mb-3 mat-elevation-z2 white-back" dir="rtl">
+    <div class="col-12">
+      <ul class="row step-wizards text-left mb-0 py-3 px-2">
+        <ng-container *ngFor="let step of totalSteps">
+          <li class="col text-center d-inline-block dark_grey-light_black-color active-step">
+            <button (click)="changeRoute(step)" class="border-0 border-solid-grey-1"
+              [class.disabled-step]="step.stepId > currentStepId" [class.white-color]="step.stepId <= currentStepId"
+              [class.primary-back]="isPrimary == true && step.stepId == currentStepId"
+              [class.blue-back]="isPrimary == false && step.stepId == currentStepId"
+              [class.success-back]="step.stepId < currentStepId" [disabled]="true">
+              <span *ngIf="step.stepId < currentStepId">
+                <i class="fas fa-check white-color"></i>
+              </span>
+              <span *ngIf="step.stepId >= currentStepId">
+                {{ step.stepId }}
+              </span>
+            </button>
+            <span class="pt-2 d-none d-sm-block links bold" [class.disabled-step]="step.stepId > currentStepId"
+              [class.success-color]="step.stepId < currentStepId">
+              {{ step.label }}
+            </span>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+
+
+<div class="container d-flex justify-content-center align-items-center mb-3 mt-3">
+
+  <div class="progresses">
+
+
+    <div class="steps">
+      <span class="font-weight-bold">1</span>
+    </div>
+
+    <span class="linetill"></span>
+
+    <div class="stepstill">
+      <span class="disabled">2</span>
+    </div>
+
+
+    <span class="linetill"></span>
+
+    <div class="stepstill">
+      <span class="disabled">3</span>
+    </div>
+
+    <span class="linetill"></span>
+
+    <div class="stepstill">
+      <span class="disabled">4</span>
+    </div>
+
+  </div>
+
+</div>
