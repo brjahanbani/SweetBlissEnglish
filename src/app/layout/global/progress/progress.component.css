@@ -1,54 +1,40 @@
+.progresses {
+  display: flex;
+  align-items: center;
+}
 
+.line {
+  width: 120px;
+  height: 3px;
+  background: #63d19e !important;
+}
 
+.linetill {
+  width: 120px;
+  height: 3px;
+  background: #8d8d8d;
+}
 
-.progresses{
-    display: flex;
-        align-items: center;
-   }
+.steps {
+  display: flex;
+  background-color: #63d19e !important;
+  color: #fff;
+  font-size: 14px;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
 
-   .line{
-
-    width: 120px;
-    height: 3px;
-    background: #63d19e;
-   }
-
-
-   .linetill{
-
-    width: 120px;
-    height: 3px;
-    background: #8d8d8d;
-   }
-
-
-   
-   .steps{
-
-    display: flex;
-    background-color: #63d19e;
-    color: #fff;
-    font-size: 14px;
-    width: 40px;
-    height: 40px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-
-
-   }
-
-   .stepstill{
-
-    display: flex;
-    background-color: #8d8d8d;
-    color: #fff;
-    font-size: 14px;
-    width: 40px;
-    height: 40px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-
-
-   }
+.stepstill {
+  display: flex;
+  background-color: #8d8d8d;
+  color: #fff;
+  font-size: 14px;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
