@@ -51,7 +51,9 @@
         <!-- Badge -->
 
         <a class="nav-link" routerLink="/cart" routerLinkActive="active">
-          <span class="badge badge-pill bg-danger">1</span>
+          <span class="badge badge-pill bg-danger">
+            {{(cartService.orderProducts$ | async )?.length}}
+          </span>
           <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart4"
               viewBox="0 0 16 16">
               <path
