@@ -9,12 +9,7 @@ import { ProgressComponent } from './global/progress/progress.component';
 import { AuthenticationModule } from './pages/authentication/authentication.module';
 
 @NgModule({
-  declarations: [
-    FooterComponent,
-    HeaderComponent,
-    LayoutComponent,
-    ProgressComponent,
-  ],
+  declarations: [FooterComponent, HeaderComponent, LayoutComponent],
   imports: [CommonModule, LayoutRoutingModule, AuthenticationModule],
 })
 export class LayoutModule {}
