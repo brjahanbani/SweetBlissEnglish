@@ -13,6 +13,7 @@
     background: #63d19e;
    }
 
+<<<<<<< HEAD
    .linetill{
 
     width: 120px;
@@ -20,6 +21,8 @@
     background: #8d8d8d;
    }
 
+=======
+>>>>>>> 85c17aee505ab0e374ab73ebcd30201996edf341
    
    .steps{
 
@@ -33,6 +36,7 @@
     justify-content: center;
     border-radius: 50%;
 
+<<<<<<< HEAD
    }
 
    .stepstill{
@@ -47,4 +51,6 @@
     justify-content: center;
     border-radius: 50%;
 
+=======
+>>>>>>> 85c17aee505ab0e374ab73ebcd30201996edf341
    }
