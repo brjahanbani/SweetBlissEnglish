@@ -34,4 +34,20 @@ export class CartService {
     }
     console.log(this._orderProducts$.value);
   }
+
+  minusQuantity(index: number): void {
+    if (index !== -1) {
+      if (this._orderProducts$.value[index].quantity > 1) {
+        this._orderProducts$.value[index].quantity =
+          this._orderProducts$.value[index].quantity - 1;
+      }
+    }
+  }
+
+  plusQuantity(index: number): void {
+    if (index !== -1) {
+      this._orderProducts$.value[index].quantity =
+        this._orderProducts$.value[index].quantity + 1;
+    }
+  }
 }

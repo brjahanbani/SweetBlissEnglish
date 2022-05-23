@@ -23,4 +23,10 @@ export class CartComponent implements OnInit {
   addToCart(product: Product, quantity: number) {
     this.cart.addToCart(product, quantity);
   }
+  minusQuantity(index: number): void {
+    this.cart.minusQuantity(index);
+  }
+  plusQuantity(index: number): void {
+    this.cart.plusQuantity(index);
+  }
 }
