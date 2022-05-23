@@ -1,4 +1,99 @@
-<app-progress></app-progress>
+<app-progress [currentStep]="1"></app-progress>
+<section class="" style="background-color: #f1f1f1;">
+  <div class="container ">
+    <div class="row d-flex justify-content-center align-items-start ">
+      <div class="col mt-3">
+        <p><span class="h4">Shopping Cart </span><span class="h5">({{(orderProducts$ | async )?.length}} item in
+            your
+            cart)</span></p>
+        <div class="card mb-4 ">
+          <ng-container *ngFor="let orderProduct of (orderProducts$ | async)">
+            <div class="card-body p-4">
+              <div class="row align-items-center justify-content-center">
+                <div class="col-md-2">
+                  <img [src]="orderProduct.product.imageSrc" class="img-fluid" alt="Generic placeholder image">
+                </div>
+                <div class="col-md-2 d-flex justify-content-center ">
+                  <div>
+                    <p class="small text-muted mb-1 pb-2">Name</p>
+                    <p class="lead fw-normal mb-0">{{orderProduct.product.name}}</p>
+                  </div>
+                </div>
+                <div class="col-md-2 d-flex justify-content-center">
+                  <div>
+                    <p class="small text-muted mb-1 pb-2">Quantity</p>
+                    <div class="d-flex mb-0" style="max-width: 300px">
+                      <button class="btn btn-primary px-3 me-2"
+                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-dash" viewBox="0 0 16 16">
+                          <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                        </svg>
+                      </button>
+
+                      <div class="form-outline">
+                        <input id="form1" min="0" name="quantity" value="{{orderProduct.quantity}}" type="number"
+                          class="form-control" />
+                        <!-- <label class="form-label" for="form1">Quantity</label> -->
+                      </div>
+
+                      <button class="btn btn-primary px-3 ms-2"
+                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                        (click)="addToCart(orderProduct.product,1)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-plus" viewBox="0 0 16 16">
+                          <path
+                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                        </svg>
+                      </button>
+                    </div>
+                    <!-- <p class="lead fw-normal mb-0">{{orderProduct.quantity}}</p> -->
+                  </div>
+                </div>
+                <div class="col-md-2 d-flex justify-content-center">
+                  <div>
+                    <p class="small text-muted mb-1 pb-2">Price</p>
+                    <p class="lead fw-normal mb-0">{{orderProduct.product.price}}</p>
+                  </div>
+                </div>
+                <div class="col-md-2 d-flex justify-content-center">
+                  <div>
+                    <p class="small text-muted mb-1 pb-2">Total</p>
+                    <p class="lead fw-normal mb-0">{{orderProduct.price}}</p>
+                  </div>
+                </div>
+                <div class="col-md-2 d-flex justify-content-center">
+                  <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" class="bi bi-x-circle"
+                      viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                      <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <div class="card mb-5">
+          <div class="card-body p-4">
+            <div class="float-end">
+              <p class="mb-0 me-5 d-flex align-items-center">
+                <span class="small text-muted me-2">Order total:</span> <span
+                  class="lead fw-normal">{{totalPrice}}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end mb-5">
+          <button type="button" class="btn btn-light btn-lg me-2">Continue shopping</button>
+          <button type="button" class="btn btn-primary btn-lg">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- <div class="container h-65vh">
   <app-d-g-cart></app-d-g-cart>
