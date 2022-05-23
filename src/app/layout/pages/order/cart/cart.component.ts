@@ -29,4 +29,7 @@ export class CartComponent implements OnInit {
   plusQuantity(index: number): void {
     this.cart.plusQuantity(index);
   }
+  removeFromCart(index: number): void {
+    this.cart.removeFromCart(index);
+  }
 }

@@ -50,4 +50,10 @@ export class CartService {
         this._orderProducts$.value[index].quantity + 1;
     }
   }
+
+  removeFromCart(index: number): void {
+    if (index !== -1) {
+      this._orderProducts$.value.splice(index, 1);
+    }
+  }
 }
