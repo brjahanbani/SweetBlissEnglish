@@ -1,4 +1,9 @@
 export class Shipping {
-  id!: number;
-  address!: string;
+  public id!: number;
+  public address!: string;
+
+  constructor(data: Partial<Shipping>) {
+    this.id = data.id!;
+    this.address = data.address!;
+  }
 }
