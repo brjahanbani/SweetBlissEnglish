@@ -8,6 +8,7 @@ import { SignoutComponent } from './signout/signout.component';
 import { SignupComponent } from './signup/signup.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AuthenticationRoutingModule,
     SharedModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
 })
 export class AuthenticationModule {}

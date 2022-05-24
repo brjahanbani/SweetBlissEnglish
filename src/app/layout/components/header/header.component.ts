@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { CartService } from 'src/app/services/cart.service';
 import { OrderProduct } from 'src/class/order-product.class';
 
@@ -8,7 +9,10 @@ import { OrderProduct } from 'src/class/order-product.class';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(public cartService: CartService) {}
+  constructor(
+    public cartService: CartService,
+    public authService: AuthService
+  ) {}
 
   ngOnInit(): void {}
 }
