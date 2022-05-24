@@ -1,16 +1,17 @@
 .progresses {
   display: flex;
   align-items: center;
+  margin-top: 30px;
 }
 
 .line {
-  width: 120px;
+  width: 80px;
   height: 3px;
   background: #63d19e !important;
 }
 
 .linetill {
-  width: 120px;
+  width: 80px;
   height: 3px;
   background: #8d8d8d;
 }
