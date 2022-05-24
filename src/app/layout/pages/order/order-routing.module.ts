@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccessGuard } from 'src/app/guards/access.guard';
 
 const routes: Routes = [
   {
@@ -8,16 +9,19 @@ const routes: Routes = [
   },
   {
     path: 'shipping',
+    canActivate: [AccessGuard],
     loadChildren: () =>
       import('./shipping/shipping.module').then((m) => m.ShippingModule),
   },
   {
     path: 'invoice',
+    canActivate: [AccessGuard],
     loadChildren: () =>
       import('./invoice/invoice.module').then((m) => m.InvoiceModule),
   },
   {
     path: 'final',
+    canActivate: [AccessGuard],
     loadChildren: () =>
       import('./final/final.module').then((m) => m.FinalModule),
   },
