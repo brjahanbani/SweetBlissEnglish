@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { OrderProduct } from 'src/class/order-product.class';
 import { Product } from 'src/class/product.class';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,17 @@ import { Product } from 'src/class/product.class';
 export class CartService {
   private _orderProducts$ = new BehaviorSubject<OrderProduct[]>([]);
 
-  constructor() {}
+  constructor(private storage: StorageService) {
+    // parsed shode serfan etelaate koli ra darad va na etelaate class manande getter ha va gheyre kar nmikonad
+    // banabarin bayad new class ijad kard ta inha kar konad
+    const orderProductsParsed =
+      this.storage.getItem<OrderProduct[]>('orderProducts') || [];
+    const orderProductClasses = orderProductsParsed.map(
+      (parsed) => new OrderProduct(parsed)
+    );
+
+    this._orderProducts$.next(orderProductClasses);
+  }
 
   get orderProducts$(): Observable<OrderProduct[]> {
     return this._orderProducts$.asObservable();
@@ -32,7 +43,11 @@ export class CartService {
       const orderProduct = new OrderProduct({ product, quantity });
       this._orderProducts$.value.push(orderProduct);
     }
-    console.log(this._orderProducts$.value);
+
+    this.storage.setItem<OrderProduct[]>(
+      'orderProducts',
+      this._orderProducts$.value
+    );
   }
 
   minusQuantity(index: number): void {
@@ -42,6 +57,10 @@ export class CartService {
           this._orderProducts$.value[index].quantity - 1;
       }
     }
+    this.storage.setItem<OrderProduct[]>(
+      'orderProducts',
+      this._orderProducts$.value
+    );
   }
 
   plusQuantity(index: number): void {
@@ -49,11 +68,19 @@ export class CartService {
       this._orderProducts$.value[index].quantity =
         this._orderProducts$.value[index].quantity + 1;
     }
+    this.storage.setItem<OrderProduct[]>(
+      'orderProducts',
+      this._orderProducts$.value
+    );
   }
 
   removeFromCart(index: number): void {
     if (index !== -1) {
       this._orderProducts$.value.splice(index, 1);
     }
+    this.storage.setItem<OrderProduct[]>(
+      'orderProducts',
+      this._orderProducts$.value
+    );
   }
 }
