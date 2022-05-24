@@ -28,6 +28,7 @@ export class SigninComponent implements OnInit {
       this.form.markAllAsTouched();
       return;
     }
+    console.log(this.form.value);
     this.authService.signin(this.form.value).subscribe(
       (response) => {
         this.router.navigate(['/cart']);
