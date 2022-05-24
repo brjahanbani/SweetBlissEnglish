@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CartService } from 'src/app/services/cart.service';
 import { OrderProduct } from 'src/class/order-product.class';
