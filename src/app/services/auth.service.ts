@@ -44,10 +44,7 @@ export class AuthService {
       .post<SignupResponse>(this.baseUrl + '/auth/signup/', values)
       .pipe(
         tap(() => {
-          this.username = values.username;
-          this.signedin$.next(true);
-          this.storage.setItem<boolean>('isLoggedin', true);
-          this.storage.setItem<string>('username', this.username);
+          this.setUserInfo(values.username);
         })
       );
   }
@@ -64,10 +61,7 @@ export class AuthService {
   signout() {
     return this.http.post(`${this.baseUrl}/auth/signout`, {}).pipe(
       tap(() => {
-        this.username = '';
-        this.signedin$.next(false);
-        this.storage.setItem<boolean>('isLoggedin', false);
-        this.storage.setItem<string>('username', '');
+        this.setUserInfo('');
       })
     );
   }
@@ -77,11 +71,16 @@ export class AuthService {
       .post<LoginResponse>(`${this.baseUrl}/auth/signin`, loginCredentials)
       .pipe(
         tap(() => {
-          this.username = loginCredentials.username;
-          this.signedin$.next(true);
-          this.storage.setItem<boolean>('isLoggedin', true);
-          this.storage.setItem<string>('username', this.username);
+          this.setUserInfo(loginCredentials.username);
         })
       );
+  }
+
+  private setUserInfo(username: string): void {
+    const isLoggedin = username === '' ? false : true;
+    this.username = username;
+    this.signedin$.next(isLoggedin);
+    this.storage.setItem<boolean>('isLoggedin', isLoggedin);
+    this.storage.setItem<string>('username', username);
   }
 }
