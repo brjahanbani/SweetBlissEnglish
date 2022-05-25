@@ -27,23 +27,11 @@ export class ShippingComponent implements OnInit {
   }
 
   onSubmit() {
-    // if (this.form.invalid) {
-    //   this.form.markAllAsTouched();
-    //   return;
-    // }
-    // this.shippingService.addAddress(this.form.value).subscribe(
-    //   (response) => {
-    //     this.router.navigate(['/invoice']);
-    //   },
-    //   (error) => {
-    //     if (!error.status) {
-    //       this.form.setErrors({ noConnection: true });
-    //     } else {
-    //       this.form.setErrors({ unknownError: true });
-    //     }
-    //   }
-    // );
+    const data = this.form.getRawValue();
+    this.shippingService.setAddress(data.address);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.form.get('address')?.setValue(this.shippingService.shippingAddress);
+  }
 }
