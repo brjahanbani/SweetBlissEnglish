@@ -1,4 +1,4 @@
-<div class="container d-flex justify-content-center align-items-center mb-3">
+<div class="container d-flex justify-content-center align-items-center mb-4">
   <div class="progresses">
     <div class="steps">
       <span class="">Cart</span>
@@ -6,7 +6,7 @@
     <ng-container *ngFor="let step of steps">
       <span class="linetill" [class.line]="currentStep >= step"></span>
       <div class="stepstill" [class.steps]="currentStep >= step">
-        <span>{{step}}</span>
+        <span>{{ step }}</span>
       </div>
     </ng-container>
   </div>
