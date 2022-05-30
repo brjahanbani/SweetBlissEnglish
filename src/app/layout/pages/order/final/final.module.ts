@@ -3,15 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { FinalRoutingModule } from './final-routing.module';
 import { FinalComponent } from './final.component';
-
+import { ProgressModule } from 'src/app/layout/global/progress/progress.module';
 
 @NgModule({
-  declarations: [
-    FinalComponent
-  ],
-  imports: [
-    CommonModule,
-    FinalRoutingModule
-  ]
+  declarations: [FinalComponent],
+  imports: [CommonModule, FinalRoutingModule, ProgressModule],
 })
-export class FinalModule { }
+export class FinalModule {}
