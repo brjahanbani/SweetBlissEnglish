@@ -16,7 +16,7 @@ export class CategoryComponent implements OnInit {
   constructor(
     private categoryService: CategoryService,
     private route: ActivatedRoute,
-    private cart: CartService
+    public cart: CartService
   ) {}
 
   ngOnInit(): void {
@@ -27,7 +27,7 @@ export class CategoryComponent implements OnInit {
     );
   }
 
-  addToCart(product: Product, quantity: number) {
-    this.cart.addToCart(product, quantity);
+  addToCart(product: Product, quantity: number, addAlert: boolean) {
+    this.cart.addToCart(product, quantity, addAlert);
   }
 }

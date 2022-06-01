@@ -2,38 +2,39 @@
     - Header -
 *****************/
 header {
-	position:relative;
-	left:0;
-	top:0;
-	width:100%;
-	min-height:120px;
-	/* padding:50px 0; */
-	color:#fff;
-	    background: #383838 url(https://www.instagram.com/p/CdbMSMMNVBX/) no-repeat center center;
-	margin-bottom:30px
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 120px;
+  /* padding:50px 0; */
+  color: #fff;
+  background: #383838 url(https://www.instagram.com/p/CdbMSMMNVBX/) no-repeat center center;
+  margin-bottom: 30px
 }
 
 /* Logo */
 header .logo {
-	clear:both;
-    display:block;
-	text-align:center;
-    padding-bottom:10px;
+  clear: both;
+  display: block;
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 /* Title */
 header h1 {
-    font-weight:300;
-    font-size:24px;
-    color:#eee;	
-	letter-spacing:2px;
-	text-align:center;
-	text-transform:uppercase;
-	margin:0 !important;
-	padding-bottom:25px;
+  font-weight: 300;
+  font-size: 24px;
+  color: #eee;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 !important;
+  padding-bottom: 25px;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900|Open Sans:400,600,800');
+
 h1,
 h2,
 h3,
@@ -44,27 +45,37 @@ div,
 input,
 p,
 a {
-    font-family: "system-ui";
-    margin: 0px;
+  font-family: "system-ui";
+  margin: 0px;
 }
 
 a,
 a:hover,
 a:focus {
-    color: inherit;
+  color: inherit;
 }
 
 body {
-    background-color: #F1F2F3;
+  background-color: #F1F2F3;
 }
 
 .container-fluid,
 .container {
-    width: 100%;
+  width: 100%;
 }
 
 .card-container {
-    padding: 100px 0px;
-    -webkit-perspective: 1000;
-    perspective: 1000;
+  padding: 100px 0px;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+.alert {
+  background-color: #0D6EFC;
+  color: azure;
+  display: block;
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 500px;
 }

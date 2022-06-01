@@ -9,6 +9,7 @@ import { StorageService } from './storage.service';
 })
 export class CartService {
   private _orderProducts$ = new BehaviorSubject<OrderProduct[]>([]);
+  public addAlert!: boolean;
 
   constructor(private storage: StorageService) {
     // parsed shode serfan etelaate koli ra darad va na etelaate class manande getter ha va gheyre kar nmikonad
@@ -32,22 +33,30 @@ export class CartService {
       .reduce((sum, current) => sum + current, 0);
   }
 
-  addToCart(product: Product, quantity: number): void {
+  addToCart(product: Product, quantity: number, addAlert: boolean): void {
     const index = this._orderProducts$.value
       .map((orderProduct) => orderProduct.product.id)
       .indexOf(product.id);
     if (index !== -1) {
       this._orderProducts$.value[index].quantity =
         quantity + this._orderProducts$.value[index].quantity;
+      this.addAlert = true;
+      setTimeout(() => this.clearMessage(addAlert), 5000);
     } else {
       const orderProduct = new OrderProduct({ product, quantity });
       this._orderProducts$.value.push(orderProduct);
+      this.addAlert = true;
+      setTimeout(() => this.clearMessage(addAlert), 5000);
     }
 
     this.storage.setItem<OrderProduct[]>(
       'orderProducts',
       this._orderProducts$.value
     );
+  }
+
+  clearMessage(addAlert: boolean) {
+    this.addAlert = false;
   }
 
   minusQuantity(index: number): void {
@@ -78,6 +87,14 @@ export class CartService {
     if (index !== -1) {
       this._orderProducts$.value.splice(index, 1);
     }
+    this.storage.setItem<OrderProduct[]>(
+      'orderProducts',
+      this._orderProducts$.value
+    );
+  }
+
+  clearCart() {
+    this._orderProducts$.next([]);
     this.storage.setItem<OrderProduct[]>(
       'orderProducts',
       this._orderProducts$.value

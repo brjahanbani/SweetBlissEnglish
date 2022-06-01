@@ -20,8 +20,8 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addToCart(product: Product, quantity: number) {
-    this.cart.addToCart(product, quantity);
+  addToCart(product: Product, quantity: number, addAlert: boolean) {
+    this.cart.addToCart(product, quantity, addAlert);
   }
   minusQuantity(index: number): void {
     this.cart.minusQuantity(index);

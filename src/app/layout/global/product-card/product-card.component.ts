@@ -11,6 +11,7 @@ export class ProductCardComponent implements OnInit {
   @Output() addToCart = new EventEmitter<{
     product: Product;
     quantity: number;
+    addAlert: boolean;
   }>();
   constructor() {}
 
