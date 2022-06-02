@@ -41,12 +41,12 @@ export class CartService {
       this._orderProducts$.value[index].quantity =
         quantity + this._orderProducts$.value[index].quantity;
       this.addAlert = true;
-      setTimeout(() => this.clearMessage(addAlert), 5000);
+      setTimeout(() => this.clearMessage(addAlert), 3000);
     } else {
       const orderProduct = new OrderProduct({ product, quantity });
       this._orderProducts$.value.push(orderProduct);
       this.addAlert = true;
-      setTimeout(() => this.clearMessage(addAlert), 5000);
+      setTimeout(() => this.clearMessage(addAlert), 3000);
     }
 
     this.storage.setItem<OrderProduct[]>(
