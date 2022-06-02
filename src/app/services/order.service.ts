@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { OrderProduct } from 'src/class/order-product.class';
 import { Order } from 'src/class/order.class';
 import { StorageService } from './storage.service';
@@ -12,9 +12,18 @@ export class OrderService {
 
   constructor(private storage: StorageService) {
     const myOrdersParsed = this.storage.getItem<Order[]>('myOrders') || [];
-    const myOrdersClasses = myOrdersParsed.map((parsed) => new Order(parsed));
+    const myOrdersClasses = myOrdersParsed.map((parsed) => {
+      parsed.orderProducts = parsed.orderProducts.map(
+        (orderProducts) => new OrderProduct(orderProducts)
+      );
+      return new Order(parsed);
+    });
 
     this._myOrders$.next(myOrdersClasses);
+  }
+
+  get myOrders$(): Observable<Order[]> {
+    return this._myOrders$.asObservable();
   }
 
   // submitOrder1(): void {
@@ -43,6 +52,6 @@ export class OrderService {
       orderProducts,
     });
     this._myOrders$.value.push(order);
-    this.storage.setItem<Order[]>('order', this._myOrders$.value);
+    this.storage.setItem<Order[]>('myOrders', this._myOrders$.value);
   }
 }

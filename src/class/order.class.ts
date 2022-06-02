@@ -9,7 +9,7 @@ export class Order {
   public orderProducts!: OrderProduct[];
 
   constructor(data: Partial<Order>) {
-    this.id = data.id!;
+    this.id = Math.floor(Math.random() * 100);
     this.createdAt = new Date();
 
     this.customerId = data?.customerId;

@@ -1,1 +1,29 @@
-<p>order-list works!</p>
+<div class="container">
+  <h4 class="mt-4 mb-4">My Orders</h4>
+  <table class="table align-middle table-striped table-bordered xtable mb-4">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Order Id</th>
+        <th scope="col">Order Date</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Total Price</th>
+        <th scope="col">Shipping Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container
+        *ngFor="let order of orderService.myOrders$ | async; let i = index"
+      >
+        <tr>
+          <td>{{ i + 1 }}</td>
+          <td>{{ order.id }}</td>
+          <td>{{ order.createdAt | date: "yyyy-MM-dd" }}</td>
+          <td>{{ order.customerName }}</td>
+          <td>{{ order.totalPrice }}</td>
+          <td>{{ order.shippingAddress }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
