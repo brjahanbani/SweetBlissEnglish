@@ -1,44 +1,80 @@
 <app-progress [currentStep]="1"></app-progress>
-<section class="" style="background-color: #ffffff;">
-  <div class="container ">
-    <div class="row d-flex justify-content-center align-items-start ">
+<section class="" style="background-color: #ffffff">
+  <div class="container">
+    <div class="row d-flex justify-content-center align-items-start">
       <div class="col mt-3">
-        <p><span class="h4">Shopping Cart </span><span class="h5"
-            style="color:#63d19e">({{(orderProducts$ | async )?.length}} item in
-            your
-            cart)</span></p>
-        <div class="card mb-4 ">
-          <ng-container *ngFor="let orderProduct of (orderProducts$ | async); let i = index">
+        <p>
+          <span class="h4">Shopping Cart </span
+          ><span class="h5" style="color: #63d19e"
+            >({{ (orderProducts$ | async)?.length }} item in your cart)</span
+          >
+        </p>
+        <div class="card mb-4">
+          <ng-container
+            *ngFor="let orderProduct of orderProducts$ | async; let i = index"
+          >
             <div class="card-body p-4">
               <div class="row align-items-center justify-content-center">
                 <div class="col-md-2">
-                  <img [src]="orderProduct.product.imageSrc" class="img-fluid" alt="Generic placeholder image">
+                  <img
+                    [src]="orderProduct.product.imageSrc"
+                    class="img-fluid"
+                    alt="Generic placeholder image"
+                  />
                 </div>
-                <div class="col-md-2 d-flex justify-content-center ">
+                <div class="col-md-2 d-flex justify-content-center">
                   <div>
                     <p class="small text-muted mb-1 pb-2">Name</p>
-                    <p class="lead fw-normal mb-0">{{orderProduct.product.name}}</p>
+                    <p class="lead fw-normal mb-0">
+                      {{ orderProduct.product.name }}
+                    </p>
                   </div>
                 </div>
                 <div class="col-md-2 d-flex justify-content-center">
                   <div>
                     <p class="small text-muted mb-1 pb-2">Quantity</p>
                     <div class="d-flex mb-0" style="max-width: 300px">
-                      <button class="btn btn-primary px-3 me-2" (click)="minusQuantity(i)">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-dash" viewBox="0 0 16 16">
-                          <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                      <button
+                        class="btn btn-primary px-3 me-2"
+                        (click)="minusQuantity(i)"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-dash"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                          />
                         </svg>
                       </button>
                       <div class="form-outline">
-                        <input id="form1" name="quantity" [value]="orderProduct.quantity" type="number"
-                          class="form-control" />
+                        <input
+                          id="form1"
+                          name="quantity"
+                          [value]="orderProduct.quantity"
+                          type="number"
+                          class="form-control"
+                        />
                       </div>
-                      <button class="btn btn-primary px-3 ms-2" (click)="plusQuantity(i)">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-plus" viewBox="0 0 16 16">
+                      <button
+                        class="btn btn-primary px-3 ms-2"
+                        (click)="plusQuantity(i)"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-plus"
+                          viewBox="0 0 16 16"
+                        >
                           <path
-                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                          />
                         </svg>
                       </button>
                     </div>
@@ -47,28 +83,41 @@
                 <div class="col-md-2 d-flex justify-content-center">
                   <div>
                     <p class="small text-muted mb-1 pb-2">Price</p>
-                    <p class="lead fw-normal mb-0">{{orderProduct.product.price}} Tooman</p>
+                    <p class="lead fw-normal mb-0">
+                      {{ orderProduct.product.price }} Tooman
+                    </p>
                   </div>
                 </div>
                 <div class="col-md-2 d-flex justify-content-center">
                   <div>
                     <p class="small text-muted mb-1 pb-2">Total</p>
-                    <p class="lead fw-normal mb-0">{{orderProduct.price}} Tooman</p>
+                    <p class="lead fw-normal mb-0">
+                      {{ orderProduct.price }} Tooman
+                    </p>
                   </div>
                 </div>
                 <div class="col-md-2 d-flex justify-content-center">
                   <div>
-                    <svg (click)="removeFromCart(i)" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                      fill="red" class="bi bi-x-circle" viewBox="0 0 16 16">
+                    <svg
+                      (click)="removeFromCart(i)"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="red"
+                      class="bi bi-x-circle"
+                      viewBox="0 0 16 16"
+                    >
                       <style>
                         svg {
                           cursor: pointer;
                         }
-
                       </style>
-                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                       <path
-                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                      />
+                      <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                      />
                     </svg>
                   </div>
                 </div>
@@ -76,30 +125,59 @@
             </div>
           </ng-container>
         </div>
-        <div class="card mb-3" style="border-width:0.5px; border-color: #63d19e;">
+        <div
+          class="card mb-3"
+          style="border-width: 0.5px; border-color: #63d19e"
+        >
           <div class="card-body p-4">
             <div class="float-end">
               <p class="mb-0 d-flex align-items-center">
                 <span class="small text-muted me-1">Order Total:</span>
-                <span class="lead fw-normal">{{totalPrice}}
-                  Tooman</span>
+                <span class="lead fw-normal">{{ totalPrice }} Tooman</span>
               </p>
             </div>
           </div>
         </div>
         <div class="d-flex justify-content-end mb-5">
-          <button type="button" class="btn btn-outline-secondary me-2" routerLink="/categories"><svg
-              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-caret-left align-content-center" viewBox="0 0 16 16">
+          <button
+            type="button"
+            class="btn btn-outline-secondary me-2"
+            routerLink="/categories"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-caret-left align-content-center"
+              viewBox="0 0 16 16"
+            >
               <path
-                d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z" />
-            </svg> Continue shopping</button>
-          <button type="button" class="btn btn-primary" routerLink="/shipping">Shipping step <svg
-              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-caret-right-fill align-content-center" viewBox="0 0 16 16">
+                d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+              />
+            </svg>
+            Continue shopping
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            routerLink="/shipping"
+            [disabled]="totalPrice == 0"
+          >
+            Shipping step
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-caret-right-fill align-content-center"
+              viewBox="0 0 16 16"
+            >
               <path
-                d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-            </svg></button>
+                d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
