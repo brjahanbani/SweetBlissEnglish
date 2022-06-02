@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { filter, Observable, take } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { CartService } from 'src/app/services/cart.service';
@@ -22,7 +23,8 @@ export class InvoiceComponent implements OnInit {
     private cart: CartService,
     public shippingService: ShippingService,
     public authService: AuthService,
-    public orderService: OrderService
+    public orderService: OrderService,
+    public router: Router
   ) {
     this.orderProducts$ = this.cart.orderProducts$;
     this.totalPrice = this.cart.totalPrice;
@@ -34,13 +36,14 @@ export class InvoiceComponent implements OnInit {
     // this.orderService.submitOrder1();
     // OR
     this.cart.orderProducts$.pipe(take(1)).subscribe((orderProducts) => {
-      if (orderProducts.length > 1) {
+      if (orderProducts.length > 0) {
         this.orderService.submitOrder2(
           this.authService.username,
           this.shippingService.shippingAddress,
           orderProducts
         );
         this.cart.clearCart();
+        this.router.navigate(['/final']);
         // this.shippingService.setAddress('');
       }
     });
