@@ -25,6 +25,12 @@ const routes: Routes = [
     loadChildren: () =>
       import('./final/final.module').then((m) => m.FinalModule),
   },
+  {
+    path: 'order-list',
+    canActivate: [AccessGuard],
+    loadChildren: () =>
+      import('./order-list/order-list.module').then((m) => m.OrderListModule),
+  },
 ];
 
 @NgModule({
